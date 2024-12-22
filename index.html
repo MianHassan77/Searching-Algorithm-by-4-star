@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Algorithms Visualization</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #e8f5e9;
+            height: 100vh;
+        }
+
+        .visualization-area {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .visualization-area canvas {
+            background-color: #fbe9e7;
+            border: 1px solid #ccc;
+        }
+
+        .input-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem;
+            background-color: #ffe0b2;
+            width: 100%;
+            border-top: 1px solid #ccc;
+        }
+
+        .input-fields {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            width: 100%;
+        }
+
+        .input-fields input {
+            padding: 10px;
+            width: 220px;
+            border: 1px solid #4caf50;
+            border-radius: 5px;
+            background-color: #f1f8e9;
+        }
+
+        .button-group,
+        .action-group {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            width: 100%;
+        }
+
+        .button-group button,
+        .action-group button {
+            padding: 8px 15px;
+            cursor: pointer;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .action-group button {
+            background-color: #2196f3;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #ddd;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="visualization-area">
+        <canvas id="graphCanvas" width="800" height="300"></canvas>
+    </div>
+    <div class="visualization-area">
+        <canvas id="resultCanvas" width="800" height="300"></canvas>
+    </div>
+    <form class="input-section">
+        <div class="input-fields">
+            <input type="text" placeholder="Source Node" id="source-node">
+            <input type="text" placeholder="Target Node" id="target-node">
+            <input type="number" placeholder="Weight" id="edge-weight">
+        </div>
+        <div class="button-group">
+            <button type="button" id="bfs-btn">Run BFS</button>
+            <button type="button" id="dfs-btn">Run DFS</button>
+            <button type="button" id="ucs-btn">Run UCS</button>
+        </div>
+        <div class="action-group">
+            <button type="button" id="add-edge-btn">Add Edge</button>
+            <button type="button" id="clear-graph">Clear</button>
+        </div>
+    </form>
+    <footer>Graph Traversal Algorithms &copy; 4 Star</footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
